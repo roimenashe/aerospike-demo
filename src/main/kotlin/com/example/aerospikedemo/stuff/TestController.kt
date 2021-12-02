@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.RestController
 
 @RequestMapping("/")
 @RestController
-@EnableCaching
 class TestController {
 
     @Cacheable(cacheNames = ["test"], sync = true)
