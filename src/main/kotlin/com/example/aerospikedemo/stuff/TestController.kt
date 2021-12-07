@@ -1,7 +1,7 @@
 package com.example.aerospikedemo.stuff
 
+import com.example.aerospikedemo.model.HelloWorld
 import org.springframework.cache.annotation.Cacheable
-import org.springframework.cache.annotation.EnableCaching
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
@@ -9,10 +9,9 @@ import org.springframework.web.bind.annotation.RestController
 @RestController
 class TestController {
 
-    @Cacheable(cacheNames = ["test"], sync = true)
+    @Cacheable(cacheNames = ["test"])
     @RequestMapping("/test")
-    fun test(): String {
-        return "Hello world!"
+    fun test(): HelloWorld {
+        return HelloWorld("Hello world!");
     }
-
 }
